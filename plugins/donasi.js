@@ -1,5 +1,5 @@
-let handler =  m => m.reply(` ❰𝐀𝐫𝐜𝐭𝐢𝐱 × 𝐀𝐫𝐜𝐞𝐮𝐬 𝐢𝐧𝐜.❱
-https://chat.whatsapp.com/ICQEbIj8PUj3bkPdgmULbN
+let handler =  m => m.reply(` *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵*.❱
+___________________________________________________
 `.trim()) // Tambah sendiri kalo mau
 handler.help = ['donate']
 handler.tags = ['info']
