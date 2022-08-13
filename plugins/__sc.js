@@ -1,7 +1,7 @@
 let handler = (t) => {
-    t.reply('*YOU WILL GET THE BOT SCRIPT ON MY YOUTUBE DRIPS OFC*')
+    t.reply('')
 }
 
-handler.command = ['sc']
+handler.command = ['']
 
 export default handler
