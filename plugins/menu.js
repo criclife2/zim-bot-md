@@ -32,7 +32,7 @@ const defaultMenu = {
 ┃ 🎀 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
 ┃ 🎀 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
 ┃ 
-┃ 🌍 𝗗𝗔𝗧𝗘: %date*
+┃ 🌍 𝗗𝗔𝗧𝗘: *%date*
 ┃ 🌍 𝗧𝗜𝗠𝗘: *%time*
 ┃
 ┃ ⭐ 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
@@ -59,12 +59,12 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Africa/Harare' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'India, Mizoram, Aizawl' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone: 'Africa/Harare'
+      timeZone: 'India, Mizoram, Aizawl'
     })
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
