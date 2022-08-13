@@ -7,16 +7,19 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   const url = 'https://www.youtube.com/watch?v=' + videoId
   await conn.sendHydrated(m.chat, `
 🌎 *𝗧𝗜𝗧𝗟𝗘:* ${title}
+
 🌍 *𝗨𝗥𝗟:* ${url}
+
 🌞 *𝗗𝗘𝗦𝗖𝗥𝗜𝗣𝗧𝗜𝗢𝗡:* ${description}
+
   `.trim(), author, thumbnail, '', '', null, null, [
-    ['SONG', `${usedPrefix}yta ${url} yes`],
-    ['VIDEO', `${usedPrefix}ytv ${url} yes`]
+    ['🎶SONG🎶', `${usedPrefix}yta ${url} yes`],
+    ['📽VIDEO️📽️', `${usedPrefix}ytv ${url} yes`]
   ], m, { asLocation: 1 })
 }
-handler.help = ['play', 'play2'].map(v => v + '')
+handler.help = ['song', 'song2'].map(v => v + '')
 handler.tags = ['downloader']
-handler.command = /^play2?$/i
+handler.command = /^song2?$/i
 
 handler.exp = 0
 handler.limit = false
