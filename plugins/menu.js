@@ -2,7 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': '𝗔𝗥𝗖𝗧𝗜𝗫 𝗕𝗢𝗧 𝗠𝗔𝗜𝗡',
+  'main': '*𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈* 𝗠𝗔𝗜𝗡',
   'game': '𝗚𝗔𝗠𝗘',
   'rpg': '𝗥𝗣𝗚 𝗚𝗔𝗠𝗘𝗦',
   'xp': '𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧',
@@ -24,9 +24,7 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-╭─━━━❰ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵*❱
-┃ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵*
-┖━━━━━━━━━━━━━━━⦂
+⫺╤╤ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╤╤⫹
 
 ╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
 ┃ 🎀 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
@@ -42,10 +40,10 @@ const defaultMenu = {
 ┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
   header: '╭━━━❰ %category ❱',
-  body: '┃ 🔮 %cmd %islimit %isPremium',
+  body: '┃ ❮🫣❯ %cmd %islimit %isPremium',
   footer: '╰━━━━━━━⦂\n',
   after: `
-*𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* |⫺ ╤╤╧╧╤╤ ⋞ 〈 ⫹⫺ 〉 ⋟ ╤╤╧╧╤╤ ⫹
+⫺╤╤𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵╤╤⫹
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -147,19 +145,19 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, '', 'INSTAGRAM', owner[0][0], 'OWNER', [
-      ['BOTGROUP', '/donasi'],
-      ['SPEED', '/ping'],
-      ['OWNER', '/owner']
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://eu10b.serverse.com:1936/shaafm/shaafm/chunklist_w1943493657.m3u8', '❮❮🎭𝚂𝙷𝙰𝙰 𝙵𝙼 𝙻𝙸𝚅𝙴🎭❯❯', owner[0][0], '❮❮👨‍💻OWNER👨‍💻❯❯', [
+      ['❮❮🎬BOTGROUP🎬❯❯', '/donasi'],
+      ['❮❮🥇SPEED🥇❯❯', '/ping'],
+      ['❮❮👨‍💻OWNER👨‍💻❯❯', '/owner']
     ], m, { asLocation: 1 })
   } catch (e) {
     conn.reply(m.chat, 'My friend, menu  error', m)
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu', 'help', 'alive']
 handler.tags = ['main']
-handler.command = /^(menu|m|help|\?)$/i
+handler.command = /^(menu|m|help|\alive)$/i
 
 handler.exp = 3
 
