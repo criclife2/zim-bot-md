@@ -2,7 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': '*𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈* 𝗠𝗔𝗜𝗡',
+  'main': '𝗠𝗔𝗜𝗡',
   'game': '𝗚𝗔𝗠𝗘',
   'rpg': '𝗥𝗣𝗚 𝗚𝗔𝗠𝗘𝗦',
   'xp': '𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧',
@@ -40,7 +40,7 @@ const defaultMenu = {
 ┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
   header: '╭━━━❰ %category ❱',
-  body: '┃ ❮🫣❯ %cmd %islimit %isPremium',
+  body: '┃ ❮🎭❯ %cmd %islimit %isPremium',
   footer: '╰━━━━━━━⦂\n',
   after: `
 ⫺╤╤𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵╤╤⫹
