@@ -39,9 +39,9 @@ const defaultMenu = {
 ┃❃┃ 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
 ┃❃┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
-  header: '┃❃╭━━━❰ %category ❱',
-  body: '  ┃❃┃❮🎭❯ %cmd %islimit %isPremium',
-  footer: '┃❃╰━━━━━━━⦂\n',
+  header: '╭━━━❰ %category ❱',
+  body: '  ┃❃❮🎭❯ %cmd %islimit %isPremium',
+  footer: '╰━━━━━━━⦂\n',
   after: `
 ⫺╤╤𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵╤╤⫹
 `,
