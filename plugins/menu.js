@@ -31,7 +31,7 @@ const defaultMenu = {
 ⫺ ╧╧╧╧╧╧ ⋞ 〈 ⫹⫺ 〉 ⋟ ╧╧╧╧╧╧ ⫹
 
 ╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
-┃❃┃🥇 𝗟𝗜𝗠𝗜𝗧 : *No Limit*
+┃❃┃🥇 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
 ┃❃┃🥇 𝗥𝗢𝗟𝗘 : *%role*
 ┃❃┃🥇 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
 ┃❃┃🥇 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
@@ -39,7 +39,7 @@ const defaultMenu = {
 ┃❃┃🥈 𝗗𝗔𝗧𝗘: *%date*
 ┃❃┃🥈 𝗧𝗜𝗠𝗘: *%time*
 ┃❃┃
-┃❃┃🥉 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime*
+┃❃┃🥉 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
 ┃❃┃🥉 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
 ┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
@@ -53,7 +53,7 @@ const defaultMenu = {
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, level, role } = global.db.data.users[m.sender]
+    let { exp, limit, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
