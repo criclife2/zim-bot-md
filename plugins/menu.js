@@ -2,7 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': '𝗔𝗥𝗖𝗧𝗜𝗫 𝗕𝗢𝗧 𝗠𝗔𝗜𝗡',
+  'main': '𝗠𝗔𝗜𝗡',
   'game': '𝗚𝗔𝗠𝗘',
   'rpg': '𝗥𝗣𝗚 𝗚𝗔𝗠𝗘𝗦',
   'xp': '𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧',
@@ -24,32 +24,36 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-⫺╤╤ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╤╤⫹
+─ ⋞ 〈🛑🄷🄴🅈 🅃🄷🄴🅁🄴🛑〉 ⋟ ─
+
+⫺ ╤╤╧╧╤╤ ⋞ 〈 ⫹⫺ 〉 ⋟ ╤╤╧╧╤╤ ⫹
+┋   ‍ 🔴𝐁𝐨𝐭 𝐎𝐧𝐥𝐢𝐧𝐞 𝐍𝐎𝐖 ‼️
+⫺ ╧╧╧╧╧╧ ⋞ 〈 ⫹⫺ 〉 ⋟ ╧╧╧╧╧╧ ⫹
 
 ╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
-┃❃┃ 🥇 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
-┃❃┃ 🥇 𝗥𝗢𝗟𝗘 : *%role*
-┃❃┃ 🥇 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
-┃❃┃ 🥇 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
+┃❃┃🥇 𝗟𝗜𝗠𝗜𝗧 : *No Limit*
+┃❃┃🥇 𝗥𝗢𝗟𝗘 : *%role*
+┃❃┃🥇 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
+┃❃┃🥇 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
 ┃❃┃ 
-┃❃┃ 🥈 𝗗𝗔𝗧𝗘: %date*
-┃❃┃ 🥈 𝗧𝗜𝗠𝗘: *%time*
+┃❃┃🥈 𝗗𝗔𝗧𝗘: *%date*
+┃❃┃🥈 𝗧𝗜𝗠𝗘: *%time*
 ┃❃┃
-┃❃┃ 🥉 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
-┃❃┃ 🥉 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
+┃❃┃🥉 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime*
+┃❃┃🥉 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
 ┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
   header: '╭━━━❰ %category ❱',
   body: '┃ ❮🎭❯ %cmd %islimit %isPremium',
   footer: '╰━━━━━━━⦂\n',
   after: `
-⫺╤╤𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵╤╤⫹
+⫺╤╤ 𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵 ╤╤⫹
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
   try {
     let _package = JSON.parse(await promises.readFile(join(__dirname, '../package.json')).catch(_ => ({}))) || {}
-    let { exp, limit, level, role } = global.db.data.users[m.sender]
+    let { exp, level, role } = global.db.data.users[m.sender]
     let { min, xp, max } = xpRange(level, global.multiplier)
     let name = await conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
