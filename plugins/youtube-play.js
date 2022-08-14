@@ -20,7 +20,7 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 🎭➠ *Views:* ${viewH}
 
-⫺ ╧╧╧╧╧╧⋞ 〈⫹⫺〉 ⋟╧╧╧╧╧╧ ⫹
+⫺ ╧╧╧╧╧╧ ⋞ 〈⫹⫺〉 ⋟ ╧╧╧╧╧╧ ⫹
   `.trim(), author, thumbnail, '', '', null, null, [
     ['🎶SONG🎶', `${usedPrefix}yta ${url} yes`],
     ['📽VIDEO️📽️', `${usedPrefix}ytv ${url} yes`]
