@@ -27,16 +27,16 @@ const defaultMenu = {
 ⫺╤╤ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╤╤⫹
 
 ┃❃╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
-┃❃┃ 🎀 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
-┃❃┃ 🎀 𝗥𝗢𝗟𝗘 : *%role*
-┃❃┃ 🎀 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
-┃❃┃ 🎀 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
+┃❃┃ 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
+┃❃┃ 𝗥𝗢𝗟𝗘 : *%role*
+┃❃┃ 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
+┃❃┃ 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
 ┃❃┃ 
-┃❃┃ 🌍 𝗗𝗔𝗧𝗘: *%date*
-┃❃┃ 🌍 𝗧𝗜𝗠𝗘: *%time*
+┃❃┃ 𝗗𝗔𝗧𝗘: *%date*
+┃❃┃ 𝗧𝗜𝗠𝗘: *%time*
 ┃❃┃
-┃❃┃ ⭐ 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
-┃❃┃ ⭐ 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
+┃❃┃ 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
+┃❃┃ 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
 ┃❃┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
   header: '┃❃╭━━━❰ %category ❱',
@@ -75,7 +75,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
-      timeZone: 'Africa/Harare'
+      timeZone: 'Asia/Colombo'
     })
     let _uptime = process.uptime() * 1000
     let _muptime
