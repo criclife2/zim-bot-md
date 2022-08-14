@@ -8,19 +8,19 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   await conn.sendHydrated(m.chat, `
  ⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹
 
-🎭 *Title:* ${title}
+🎭➠ *Title:* ${title}
 
-🎭 *Url:* ${url}
+🎭➠ *Url:* ${url}
 
-🎭 *Description:* ${description}
+🎭➠ *Description:* ${description}
 
-🎭 *Published:* ${publishedTime}
+🎭➠ *Published:* ${publishedTime}
 
-🎭 *Duration:* ${durationH}
+🎭➠ *Duration:* ${durationH}
 
-🎭 *Views:* ${viewH}
+🎭➠ *Views:* ${viewH}
 
-⫺ ╧╧╧╧╧╧ ⋞ 〈 ⫹⫺ 〉 ⋟ ╧╧╧╧╧╧ ⫹
+⫺ ╧╧╧╧╧╧⋞ 〈⫹⫺〉 ⋟╧╧╧╧╧╧ ⫹
   `.trim(), author, thumbnail, '', '', null, null, [
     ['🎶SONG🎶', `${usedPrefix}yta ${url} yes`],
     ['📽VIDEO️📽️', `${usedPrefix}ytv ${url} yes`]
