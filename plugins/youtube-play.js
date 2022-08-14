@@ -3,15 +3,22 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (!text) throw `Use example ${usedPrefix}${command} Minecraft`
   let vid = (await youtubeSearch(text)).video[0]
   if (!vid) throw 'Video/Audio Not found'
-  let { title, description, thumbnail, videoId, durationH } = vid
+  let { title, description, thumbnail, videoId, durationH, viewH, publishedTime } = vid
   const url = 'https://www.youtube.com/watch?v=' + videoId
   await conn.sendHydrated(m.chat, `
-🌎 *𝗧𝗜𝗧𝗟𝗘:* ${title}
+ ⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹
 
-🌍 *𝗨𝗥𝗟:* ${url}
+📌 *Title:* ${title}
 
-🌞 *𝗗𝗘𝗦𝗖𝗥𝗜𝗣𝗧𝗜𝗢𝗡:* ${description}
+🔗 *Url:* ${url}
 
+🖹 *Description:* ${description}
+
+⏲️ *Published:* ${publishedTime}
+
+⌚ *Duration:* ${durationH}
+
+👁️ *Views:* ${viewH}
   `.trim(), author, thumbnail, '', '', null, null, [
     ['🎶SONG🎶', `${usedPrefix}yta ${url} yes`],
     ['📽VIDEO️📽️', `${usedPrefix}ytv ${url} yes`]
