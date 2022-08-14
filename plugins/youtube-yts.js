@@ -13,7 +13,7 @@ let handler = async (m, { text }) => {
 🔮 ${v.videoCount} video
 `.trim()
     }
-  }).filter(v => v).join('\n\n========================\n\n')
+  }).filter(v => v).join('\n\n⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹\n\n')
   m.reply(teks)
 }
 handler.help = ['', 'earch'].map(v => 'yts' + v + '')
