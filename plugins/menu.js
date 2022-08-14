@@ -2,7 +2,7 @@ import { promises } from 'fs'
 import { join } from 'path'
 import { xpRange } from '../lib/levelling.js'
 let tags = {
-  'main': '𝗠𝗔𝗜𝗡',
+  'main': '𝗔𝗥𝗖𝗧𝗜𝗫 𝗕𝗢𝗧 𝗠𝗔𝗜𝗡',
   'game': '𝗚𝗔𝗠𝗘',
   'rpg': '𝗥𝗣𝗚 𝗚𝗔𝗠𝗘𝗦',
   'xp': '𝗫𝗣 & 𝗟𝗜𝗠𝗜𝗧',
@@ -24,26 +24,28 @@ let tags = {
 }
 const defaultMenu = {
   before: `
-⫺╤╤ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╤╤⫹
+╭─━━━❰ 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂❱
+┃ 𝗪𝗘𝗟𝗖𝗢𝗠𝗘 𝗧𝗢 𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓
+┖━━━━━━━━━━━━━━━⦂
 
-┃❃╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
-┃❃┃ 🥇𝗟𝗜𝗠𝗜𝗧 : **%limit*
-┃❃┃ 🥇𝗥𝗢𝗟𝗘 : *%role*
-┃❃┃ 🥇𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
-┃❃┃ 🥇𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
-┃❃┃ 
-┃❃┃ 🥈𝗗𝗔𝗧𝗘: *%date*
-┃❃┃ 🥈𝗧𝗜𝗠𝗘: *%time*
-┃❃┃
-┃❃┃ 🥉𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
-┃❃┃ 🥉𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
-┃❃┗━━━━━━━━━━━━━━━━⦂
+╭━━━━❰ 𝗨𝗦𝗘𝗥 ❱
+┃ 🎀 𝗟𝗜𝗠𝗜𝗧 : *%limit Limit*
+┃ 🎀 𝗥𝗢𝗟𝗘 : *%role*
+┃ 🎀 𝗟𝗘𝗩𝗘𝗟 : *%level (%exp / %maxexp)*
+┃ 🎀 𝗧𝗢𝗧𝗔𝗟 𝗫𝗣 : %totalexp ✨
+┃ 
+┃ 🌍 𝗗𝗔𝗧𝗘: %date*
+┃ 🌍 𝗧𝗜𝗠𝗘: *%time*
+┃
+┃ ⭐ 𝗨𝗣𝗧𝗜𝗠𝗘: *%uptime (%muptime)*
+┃ ⭐ 𝗗𝗔𝗧𝗔𝗕𝗔𝗦𝗘: %rtotalreg of %totalreg
+┗━━━━━━━━━━━━━━━━⦂
 %readmore`.trimStart(),
-  header: '╭━━━❰ %category ❱'
-  body: '  ┃❮🎭❯ %cmd %islimit %isPremium',
+  header: '╭━━━❰ %category ❱',
+  body: '┃ 🔮 %cmd %islimit %isPremium',
   footer: '╰━━━━━━━⦂\n',
   after: `
-⫺╤╤𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵╤╤⫹
+𝐀𝐑𝐂𝐓𝐈𝐗 𝐁𝐎𝐓 𝐈𝐍𝐂 |©𝐒𝐢𝐛𝐬𝐬𝐬𝐬𝐬𝐬𝐬𝐬
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
@@ -59,12 +61,12 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     // Offset    0 is  0.00
     // Offset  420 is  7.00
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
-    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Asia/Colombo' })
+    let week = d.toLocaleDateString(locale, { weekday: 'long', timeZone: 'Africa/Harare' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
       month: 'long',
       year: 'numeric',
-      timeZone: 'Asia/Colombo'
+      timeZone: 'Africa/Harare'
     })
     let dateIslamic = Intl.DateTimeFormat(locale + '-TN-u-ca-islamic', {
       day: 'numeric',
@@ -75,7 +77,7 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
-      timeZone: 'Asia/Colombo'
+      timeZone: 'Africa/Harare'
     })
     let _uptime = process.uptime() * 1000
     let _muptime
@@ -145,10 +147,10 @@ let handler = async (m, { conn, usedPrefix: _p, __dirname }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     const pp = await conn.profilePictureUrl(conn.user.jid, 'image').catch(_ => './src/avatar_contact.png')
-    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://eu10b.serverse.com:1936/shaafm/shaafm/chunklist_w1943493657.m3u8', '❮❮🎭𝚂𝙷𝙰𝙰 𝙵𝙼 𝙻𝙸𝚅𝙴🎭❯❯', owner[0][0], '❮❮👨‍💻OWNER👨‍💻❯❯', [
-      ['❮❮🎬BOTGROUP🎬❯❯', '/donasi'],
-      ['❮❮🥇SPEED🥇❯❯', '/ping'],
-      ['❮❮👨‍💻OWNER👨‍💻❯❯', '/owner']
+    conn.sendHydrated(m.chat, text.trim(), author, pp, 'https://www.instagram.com/sibssssssss', 'INSTAGRAM', owner[0][0], 'OWNER', [
+      ['BOTGROUP', '/donasi'],
+      ['SPEED', '/ping'],
+      ['OWNER', '/owner']
     ], m, { asLocation: 1 })
   } catch (e) {
     conn.reply(m.chat, 'My friend, menu  error', m)
