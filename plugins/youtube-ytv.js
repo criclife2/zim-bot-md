@@ -8,13 +8,20 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   const limitedSize = (isPrems || isOwner ? 99 : 70) * 1024
   let isLimit = limitedSize < video['360p'].fileSize
   if (!isY) await conn.sendFile(m.chat, thumbnail, 'thumbnail.jpg', `
-*🔮𝗧𝗜𝗧𝗟𝗘:* ${title}
-*🔮𝗙𝗜𝗟𝗘𝗦𝗜𝗭𝗘:* ${video['360p'].fileSizeH}
+ ⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹
+
+*🎭➠ 𝗧𝗜𝗧𝗟𝗘:* ${title}
+
+*🎭➠ 𝗙𝗜𝗟𝗘𝗦𝗜𝗭𝗘:* ${video['360p'].fileSizeH}
 *${isLimit ? 'Uasge ' : ''}Link:* ${link}
 `.trim(), m)
 if (!isLimit) await conn.sendFile(m.chat, link, title + '.mp3', `
-*🔮𝗧𝗜𝗧𝗟𝗘:* ${title}
-*🔮𝗙𝗜𝗟𝗘𝗦𝗜𝗭𝗘:* ${video['360p'].fileSizeH}
+
+*🎭➠ 𝗧𝗜𝗧𝗟𝗘:* ${title}
+
+*🎭➠ 𝗙𝗜𝗟𝗘𝗦𝗜𝗭𝗘:* ${video['360p'].fileSizeH}
+
+⫺ ╧╧╧╧╧╧ ⋞ 〈⫹⫺〉 ⋟ ╧╧╧╧╧╧ ⫹
 `.trim(), m, null, {
   asDocument: 0
 })
