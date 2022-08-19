@@ -16,7 +16,7 @@ let handler = async (m, { text }) => {
   }).filter(v => v).join('\n\n⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹\n\n')
   m.reply(teks)
 }
-handler.help = ['yts', 'getyt'].map(v => 'yts' + v + '')
+handler.help = ['yts', 'getyt'].map(v => v + '')
 handler.tags = ['tools']
 handler.command = /^(yts|getyt)$/i
 
