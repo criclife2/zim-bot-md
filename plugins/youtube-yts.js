@@ -16,8 +16,8 @@ let handler = async (m, { text }) => {
   }).filter(v => v).join('\n\n⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹\n\n')
   m.reply(teks)
 }
-handler.help = ['', 'earch'].map(v => 'yts' + v + '')
+handler.help = ['yts', 'getyt'].map(v => 'yts' + v + '')
 handler.tags = ['tools']
-handler.command = /^yts(earch)?$/i
+handler.command = /^(yts|getyt)$/i
 
 export default handler
