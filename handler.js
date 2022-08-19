@@ -273,11 +273,11 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
-                    sBye: '',
-                    sPromote: '',
+                    sBye: 'true',
+                    sPromote: 'true',
                     sDemote: '',
                     delete: true,
                     antiLink: true,
@@ -696,8 +696,8 @@ To turn off this feature, type
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: 'This command can only bee used by  _*ARCTIX BOT  OWWNER!1!1!*_',
-        owner: 'This command can only be used by _*ARCTIX BOT  Owner*_!',
+        rowner: 'This command can only bee used by  _*𝙼𝚒𝚜𝚜 𝚀𝚎𝚎𝚗 OWWNER!1!1!*_',
+        owner: 'This command can only be used by _*𝙼𝚒𝚜𝚜 𝚀𝚎𝚎𝚗 OWWNER*_!',
         mods: 'This command can only be used by  _*Moderator*_ !',
         premium: 'This command can only be used by member _*Premium*_ !',
         group: 'This command can only be used in Groups!',
