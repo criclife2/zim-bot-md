@@ -181,7 +181,7 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.gardenboxs)) user.gardenboxs = 0
               if (!isNumber(user.gems)) user.gems = 0
               if (!isNumber(user.glass)) user.glass = 0
-              if (!isNumber(user.glimit)) user.glimit = 20
+              if (!isNumber(user.glimit)) user.glimit = 9999999
               if (!isNumber(user.glory)) user.glory = 0
               if (!isNumber(user.gold)) user.gold = 0
               if (!isNumber(user.griffin)) user.griffin = 0
@@ -878,7 +878,7 @@ export async function handler(chatUpdate) {
 		
             if (chat) {
                 if (!('isBanned' in chat)) chat.isBanned = false                    
-                if (!('welcome' in chat)) chat.welcome = true                    
+                if (!('welcome' in chat)) chat.welcome = false                    
                 if (!('detect' in chat)) chat.detect = true                    
                 if (!('sWelcome' in chat)) chat.sWelcome = ''                    
                 if (!('sBye' in chat)) chat.sBye = ''                    
@@ -899,7 +899,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
@@ -1244,7 +1244,7 @@ export async function handler(chatUpdate) {
 		
 	await this.readMessages([m.key])
         
-        if (!m.fromMem && m.text.match(/(Hola|como|cuando|donde|porque|hi|fine|good|god|suerte|amor|odio|triste|gata|cat|bot|bye|chao|saludo|siempre|veces|.-.|._.|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
+        if (!m.fromMem && m.text.match(/(Hi|හායි|Mk|.song|.video|hi|.yts|.menu|.alive|.attp|.google|.gimage|.image|.fb|.facebook|bot|bye|.ig|.tiktok|.play|.wallpaper|.yt|owner|:)|:(|:v|v:|o.o|;v|v;|v':|:'v)/gi)) {
         let emot = pickRandom(["😺", "😸", "😹", "😻", "😼", "😽", "🙀", "😿", "😾", "🤩", "🥰", "😘", "😊", "🥳", "😏", "😳", "🥵", "🤯", "😱", "😨", "🤫", "🥴", "🤧", "🤑", "🤠", "🤖", "👾", "🎃", "👻", "🤡", "🤝", "💪", "👑", "😚", "🐱", "🐈", "🐆", "🐅", "💫", "⭐️", "🌟", "✨", "⚡️", "🌈", "☃️", "⛄️", "🌝", "🌛", "🌜", "🍓", "🍎", "🍭", "🍩", "🍫", "🍧", "🚀", "🚅", "🚄", "🎈", "🪄", "❤️", "🧡", "💛", "💚", "💙", "💜", "🖤", "🤍", "🤎", "💔", "❣️", "💕", "💞", "💓", "💗", "💖", "💘", "💝", "💟", "🌝", "😎", "👻", "🔥", "🖕", "🐦"])
         this.sendMessage(m.chat, { react: { text: emot, key: m.key }})}
         function pickRandom(list) { return list[Math.floor(Math.random() * list.length)]}
@@ -1355,16 +1355,16 @@ export async function deleteUpdate(message) {
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando solo lo puede usar Mí Creador(a)!!*_\n_*¡¡This command can only be used by My Creator!!*_',
-        owner: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando solo puede ser utilizado por Mí Creador(a) de Bot!!*_\n_*¡¡This command can only be used by Owner Bot!!*_',
-        mods: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando solo puede ser utilizado por Moderador(es) y Mí Creador(a)!!*_\n_*¡¡This command can only be used by Moderator!!*_',
-        premium: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando es solo para miembros Premium y Mí Creador(a)!!*_\n_*¡¡This command is only for Premium members!!*_',
-        group: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando solo se puede usar en grupos!!*_\n_*¡¡This command can only be used in groups!!*_',
-        private: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando solo se puede usar en el chat privado del Bot!!*_\n_*¡¡This command can only be used in private chat*_',
-        admin: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Este comando es solo para Administradores!!*_\n_*¡¡This command is for Administrators only!!*_',
-        botAdmin: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Haz que Yo (Bot) sea Administrador para usar este comando!!*_\n_*¡¡Make the bot an Admin to use this command!!*_',
-        unreg: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡Qué esperas para estar Verificando(a) en GataBot-MD! Usa el comando #verificar*_\n_*What are you waiting for to be Verifying with GataBot-MD! Use the #verify command*_',
-        restrict: '╰⊱⚠️⊱ *𝘼𝘿𝙑𝙀𝙍𝙏𝙀𝙉𝘾𝙄𝘼 | 𝙒𝘼𝙍𝙉𝙄𝙉𝙂* ⊱⚠️⊱╮\n\n_*¡¡Esta función está Restringida | disable por Mí Creador(a)!!*_\n_*¡¡This feature is off | disable!!*_'
+        rowner: 'This command can only bee used by  _*𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵  OWWNER!1!1!*_',
+        owner: 'This command can only be used by _*𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵  Owner*_!',
+        mods: 'This command can only be used by  _*Moderator*_ !',
+        premium: 'This command can only be used by member _*Premium*_ !',
+        group: 'This command can only be used in Groups!',
+        private: 'This command can only be used in Private!',
+        admin: 'Thi command is only for *Admin* grup!',
+        botAdmin: 'Give ARCTIX BOT   *Adminship* to use this command!',
+        unreg: 'Please register to 𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵  to use this feature by typing:\n\n*#reg name.age*\n\nExample: *#reg 💆‍♂️𝚆𝚑𝚊𝚝𝚜𝚊𝚙𝚙_𝚋𝚘𝚝 #24/7💆‍♂️*',
+        restrict: 'This feature *disable*!'
     }[type]
     if (msg) return m.reply(msg) 
 }
