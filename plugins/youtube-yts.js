@@ -8,9 +8,14 @@ let handler = async (m, { text }) => {
 🎭➠ *${v.title}* (${v.url})
       `.trim()
       case 'channel': return `
+
 🎭➠ *${v.channelName}* (${v.url})
+
 🎭➠ ${v.subscriberH} (${v.subscriber}) Subscriber
+
 🎭➠ ${v.videoCount} video
+
+_🎶;;♥;;🎶""♥♥""🎶;;♥;;🎶_
 `.trim()
     }
   }).filter(v => v).join('\n\n⫺╤╤╧ *𝘔𝘪𝘴𝘴 𝘘𝘦𝘦𝘯 𝘞𝘈 𝘣𝘰𝘵* ╧╤╤⫹\n\n')
