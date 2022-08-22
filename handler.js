@@ -44,7 +44,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.exp))
                     user.exp = 0
                 if (!isNumber(user.limit))
-                    user.limit = 999999999999
+                    user.limit = 999999
                 if (!isNumber(user.lastclaim))
                     user.lastclaim = 0
                 if (!('registered' in user))
@@ -77,7 +77,7 @@ export async function handler(chatUpdate) {
                 if (!isNumber(user.health))
                     user.health = 100
                 if (!isNumber(user.limit))
-                    user.limit = 99999999999999
+                    user.limit = 999999
                 if (!isNumber(user.potion))
                     user.potion = 0
                 if (!isNumber(user.trash))
@@ -175,7 +175,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.users[m.sender] = {
                     exp: 0,
-                    limit: 99999999999999,
+                    limit: 999999,
                     lastclaim: 0,
                     registered: false,
                     name: m.name,
@@ -191,7 +191,7 @@ export async function handler(chatUpdate) {
 
                     money: 0,
                     health: 100,
-                    limit: 99999999999999,
+                    limit: 999999,
                     potion: 10,
                     trash: 0,
                     wood: 0,
@@ -249,7 +249,7 @@ export async function handler(chatUpdate) {
                 if (!('isBanned' in chat))
                     chat.isBanned = false
                 if (!('welcome' in chat))
-                    chat.welcome = true
+                    chat.welcome = false
                 if (!('detect' in chat))
                     chat.detect = true
                 if (!('sWelcome' in chat))
@@ -273,7 +273,7 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: true,
                     sWelcome: '',
                     sBye: '',
