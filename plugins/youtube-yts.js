@@ -5,8 +5,8 @@ let handler = async (m, { text }) => {
   let teks = [...video, ...channel].map(v => {
     switch (v.type) {
       case 'video': return `
-🎭➠ *${v.title}*\n(${v.url})\n
-      `.trim()\n
+🎭➠ *${v.title}* (${v.url})
+      `.trim()
       case 'channel': return `
 🎭➠ *${v.channelName}* (${v.url})
 🎭➠ ${v.subscriberH} (${v.subscriber}) Subscriber
