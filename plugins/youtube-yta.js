@@ -22,7 +22,7 @@ if (!isLimit) await conn.sendFile(m.chat, link, title + '.mp3', `
 
 *🎭➠ 𝗙𝗜𝗟𝗘𝗦𝗜𝗭𝗘:* ${audio['128kbps'].fileSizeH}
 
-⫺ ╧╧╧╧╧╧ ⋞ 〈⫹⫺〉 ⋟ ╧╧╧╧╧╧ ⫹
+_🎶;;♥;;🎶""♥♥""🎶;;♥;;🎶_
 `.trim(), m, null, {
 asDocument: 1
 })
