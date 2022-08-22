@@ -22,8 +22,8 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
 
 ⫺ ╧╧╧╧╧╧ ⋞ 〈⫹⫺〉 ⋟ ╧╧╧╧╧╧ ⫹
   `.trim(), author, thumbnail, '', '', null, null, [
-    ['⦀ 𝙰𝚄𝙳𝙸𝙾➟𝚃𝚈𝙿𝙴➟𝙳𝙾𝙲𝚄𝙼𝙴𝙽𝚃 ⦀', `${usedPrefix}yta ${url} yes`],
-    ['⦀ 𝚅𝙸𝙳𝙴𝙾➠𝚀𝚄𝙰𝙻𝙸𝚃𝚈➟360𝙿 ⦀', `${usedPrefix}ytv ${url} yes`]
+    ['⦀𝙰𝚄𝙳𝙸𝙾➟𝚃𝚈𝙿𝙴➟𝙳𝙾𝙲𝚄𝙼𝙴𝙽𝚃⦀', `${usedPrefix}yta ${url} yes`],
+    ['⦀𝚅𝙸𝙳𝙴𝙾➠𝚀𝚄𝙰𝙻𝙸𝚃𝚈➟360𝙿⦀', `${usedPrefix}ytv ${url} yes`]
   ], m, { asLocation: 1 })
 }
 handler.help = ['song', 'video','play'].map(v => v + '')
