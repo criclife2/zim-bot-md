@@ -1,4 +1,4 @@
-const simple = require('./lib/simple.js')
+const simple = require('./lib/simple')
 const util = require('util')
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
